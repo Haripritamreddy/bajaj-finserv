@@ -13,8 +13,13 @@ const USER_ID = "alapatiharipritamreddy_10092004";
 const EMAIL = "alapatihari.pritam2021@vitstudent.ac.in";
 const ROLL_NUMBER = "21BDS0230";
 
+app.use((req, res, next) => {
+  console.log('Request Headers:', req.headers);
+  console.log('Request Body:', req.body);
+  next();
+});
+
 app.post('/bfhl', (req, res) => {
-  console.log(req.body); // Log request body for debugging
   try {
     const { data } = req.body;
 
@@ -23,9 +28,9 @@ app.post('/bfhl', (req, res) => {
     }
 
     const numbers = data.filter(item => !isNaN(item));
-    const alphabets = data.filter(item => isNaN(item));
+    const alphabets = data.filter(item => isNaN(item) && item.length === 1);
     const highestLowercase = alphabets
-      .filter(char => char.length === 1 && char === char.toLowerCase())
+      .filter(char => char === char.toLowerCase())
       .sort((a, b) => b.localeCompare(a))[0] || [];
 
     res.json({
