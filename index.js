@@ -9,9 +9,9 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 // Your personal details
-const USER_ID = "your_full_name_ddmmyyyy";
-const EMAIL = "your_email@college.edu";
-const ROLL_NUMBER = "your_roll_number";
+const USER_ID = "alapatiharipritamreddy_10092004";
+const EMAIL = "alapatihari.pritam2021@vitstudent.ac.in";
+const ROLL_NUMBER = "21BDS0230";
 
 app.post('/bfhl', (req, res) => {
   try {
