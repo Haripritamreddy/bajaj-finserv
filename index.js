@@ -14,6 +14,7 @@ const EMAIL = "alapatihari.pritam2021@vitstudent.ac.in";
 const ROLL_NUMBER = "21BDS0230";
 
 app.post('/bfhl', (req, res) => {
+  console.log(req.body); // Log request body for debugging
   try {
     const { data } = req.body;
 
